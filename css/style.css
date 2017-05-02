@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+ul, li {
+  list-style: none; }
+
+input, textarea {
+  outline: none; }
+
+body {
+  font-family: "helvetica neue",arial,sans-serif;
+  font-size: 14px;
+  color: #444; }
+
+header:first-child {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  height: 48px;
+  position: relative; }
+  header:first-child .logo img:first-child {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 80px;
+    height: 28px; }
+  header:first-child ul {
+    position: relative;
+    left: 120px;
+    height: 100%;
+    line-height: 48px; }
+    header:first-child ul li {
+      float: left;
+      color: #444;
+      margin-right: 20px; }
+      header:first-child ul li input {
+        width: 500px;
+        height: 32px;
+        background: #fafafa;
+        color: #bbb;
+        border: 1px solid #ddd;
+        border-radius: 2px;
+        padding-left: 10px; }
+  header:first-child .persion-info {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 48px; }
+    header:first-child .persion-info span:first-child {
+      background: url(http://huaban.com/img/menu_sprite.svg?20150302);
+      background-position: 15px -185px;
+      display: inline-block;
+      width: 46px;
+      height: 48px; }
+    header:first-child .persion-info span:last-child {
+      display: inline-block;
+      width: 46px;
+      height: 48px;
+      text-align: center;
+      vertical-align: top; }
+      header:first-child .persion-info span:last-child img {
+        width: 26px;
+        height: 26px;
+        position: relative;
+        top: 11px; }
+
+.persion {
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+  width: 1244px;
+  height: 215px;
+  margin: 0 auto;
+  margin-top: 40px;
+  position: relative; }
+  .persion .persion-icon {
+    padding: 5px;
+    position: absolute;
+    top: -30px;
+    left: 10px;
+    background: white; }
+    .persion .persion-icon .top {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 150px;
+      height: 30px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); }
+    .persion .persion-icon .icon-bottom {
+      position: relative; }
+      .persion .persion-icon .icon-bottom div {
+        text-align: center; }
+      .persion .persion-icon .icon-bottom .fans {
+        width: 50%;
+        float: left;
+        border-right: 1px solid gray; }
+      .persion .persion-icon .icon-bottom .follow {
+        width: 49%;
+        float: right; }
+  .persion .top-hd {
+    position: relative;
+    padding-left: 250px;
+    top: 20px;
+    height: 40px; }
+    .persion .top-hd span {
+      font-size: 20px;
+      font-weight: 800;
+      color: black;
+      line-height: 40px; }
+    .persion .top-hd div {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      border: 1px solid gray;
+      padding: 5px 10px; }
+  .persion .info {
+    position: absolute;
+    top: 170px;
+    width: 100%;
+    height: 45px;
+    background: #FAFAFA;
+    line-height: 45px;
+    border: 1px solid #EDEDED; }
+    .persion .info ul {
+      float: left; }
+      .persion .info ul li {
+        float: left;
+        width: 80px;
+        text-align: center;
+        border-right: 1px solid gray; }
+    .persion .info input {
+      float: right;
+      width: 200px;
+      height: 30px;
+      margin-top: 7.5px;
+      margin-right: 20px;
+      padding-left: 10px; }
+
+.stream {
+  -webkit-column-width: 202px;
+  -moz-column-width: 202px;
+  column-width: 202px; }
+  .stream .box {
+    padding: 15px 7px 0 7px;
+    float: left; }
+    .stream .box .pic {
+      border: 1px solid #dddddd; }
+      .stream .box .pic img {
+        width: 165px;
+        padding: 10px; }
+
+/*# sourceMappingURL=style.css.map */
