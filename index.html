@@ -94,18 +94,19 @@
 
 		</div>
 
-		<div id="FY_WIDGETS">	    
+		<!-- <div id="FY_WIDGETS">	    
 			<style>	
 				#FY_WIDGETS {
 					z-index: 99999;
-				}        
-				.widgets-main {	            
 					background: rgba(229,229,229,.95);	            
 					width: 100%;	            
 					height: 100%;	            
 					position: fixed;	            
 					top: 0;	            
-					left: 0;	        
+					left: 0;
+				}        
+				.widgets-main {	            
+	        
 				}	        
 				.widgets-main .widgets-container {	            
 					background: white;	            
@@ -140,8 +141,7 @@
 					text-align: center;	        
 				}	        
 				.widgets-container .middle img {	        	
-					width: 50px;	        	
-					height: 50px;	        	
+					width: 150px;	        	
 					margin: 0 auto;	        
 				}	        
 				.widgets-container .tag .info {				
@@ -178,8 +178,6 @@
 				}			
 				.widgets-container .new {				
 					margin-top: 20px;				
-					padding: 0 20px;
-					padding-bottom: 10px;
 					width: 400px;	
 					box-shadow: 0 0 4px gray;
 					position: relative;
@@ -187,18 +185,30 @@
 				}	
 				.widgets-container .new .tag {
 					background: #ededed;
-					padding: 5px 10px;
+					padding: 0px 10px;
+					height: 25px;
 					float: left;
 					margin-right: 10px;
-					margin-top: 10px;
-				}		
+					margin-top: 5px;
+					line-height: 25px;
+				}	
+				.widgets-container .new span {
+					position: absolute;
+					top: 0;
+					left: 10px;
+					line-height: 35px;
+				}	
 				.widgets-container .new input {	
 					float: left;			
 					border: none;
 					width: 100px;
 					height: 35px;
-					padding-left: 10px;			
+					padding-left: 10px;	
+					background: transparent;		
 				}			
+				.widgets-container .new .fix {
+					position: relative;
+				}
 				.widgets-container .new .clear {
 					clear: both;
 				}
@@ -231,7 +241,7 @@
 						<i></i>	            
 					</div>	            
 					<div class="middle">	            	
-						<img src="" alt="">	            	
+						<img src="http://avatar.csdn.net/8/E/E/1_xiayefanxing.jpg" alt="">	            	
 						<p>收藏成功</p>	            
 					</div>	            
 					<div class="tag">	            	
@@ -242,42 +252,78 @@
 						<div class="tag-list">	            		
 							<ul>	            			
 								<li>我的标签：</li>	            			
-								<li>html5</li>	            			
-								<li>错误</li>	            			
-								<li>IT</li>	            			
-								<li>搞笑</li>	            			
-								<li>购物</li>	            			
-								<li>测试</li>	            		
+								<li tag="html5">html5</li>	            			
+								<li tag="错误">错误</li>	            			
+								<li tag="IT">IT</li>	            			
+								<li tag="搞笑">搞笑</li>	            			
+								<li tag="购物">购物</li>	            			
+								<li tag="测试">测试</li>	            		
 							</ul>	            		
 							<div style="clear:both;"></div>	            	
 						</div>	            	
-						<div class="new">	            		
-							<input type="text" placeholder="输入文字，按空格或回车以生成标签"> 
-							<div class="clear"></div> 	                      	
+						<div class="new">
+							<span>输入文字，按空格或回车以生成标签</span>	
+							<div class="fix">
+								<input type="text" placeholder=""> 
+								<div class="clear"></div> 
+							</div>            			                      	
 						</div>
 					</div>	            
 					<div class="bottom">	            	
-						<span>添加</span>	            	
-						<span>取消</span>	            
+						<span onclick="addClick()">添加</span>	            	
+						<span onclick="cancel()">取消</span>	            
 					</div>	        
 				</div>	   
-			</div>
+			</div> -->
 
 	</body>
 
 	<script src="http://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	<script src="/Users/fyz/Documents/HTML/FYKit/imageCollection/js/tools.js"></script>
 	<script>
-		function addUI(){
-			$('body').append('<div id=\"FY_WIDGETS\">	    <style>	        .widgets-main {	            background: rgba(229,229,229,.95);	            width: 100%;	            height: 100%;	            position: fixed;	            top: 0;	            left: 0;	        }	        .widgets-main .widgets-container {	            background: white;	            width: 500px;	            margin: 0px auto 0;	            overflow: scroll;	        }	        .widgets-container .header {	        	height: 40px;	        	border-top: 1px solid orange;	        	border-bottom: 1px solid gray;				padding: 0 20px;				line-height: 40px;				position: relative;	        }	        .widgets-container .header span {	        	color: black;	        	font-size: 18px;	        }	        .widgets-container .header i {	        	display: inline-block;	        	width: 15px;	        	height: 15px;	        	position: absolute;				background: red;				right: 20px;				top: 12.5px;	        }	        .widgets-container .middle {				margin: 20px 20px 10px;				border-bottom: 1px solid gray;				text-align: center;	        }	        .widgets-container .middle img {	        	width: 50px;	        	height: 50px;	        	margin: 0 auto;	        }	        .widgets-container .tag .info {				padding: 0 20px;	        }	        .widgets-container .tag .info i {	        	display: inline-block;	        	width: 10px;	        	height: 10px;	        	background: orange;	        }	        ul, li {	        	margin: 0;	        	padding: 0;	        }			.widgets-container .tag-list ul, .widgets-container .tag-list li {				list-style: none;				margin: 0;				padding: 0;			}	        .widgets-container .tag-list ul li {				float: left;				border: 1px solid gray;				margin-right: 10px;				padding: 2px 10px;	        }	        .widgets-container .tag-list ul li:first-child {	        	border: none;	        	padding: 2px 0;	        	margin-right: 0;	        }	        .widgets-container .tag-list {	        	padding: 20px 20px 0;	        }			.widgets-container .new {				margin-top: 20px;				padding: 0 20px;			}			.widgets-container .new input {				box-shadow: 0 0 4px gray;				border: none;				width: 450px;				height: 35px;			padding-left: 10px;}			.widgets-container .bottom {				background: #f4f4f4;				height: 50px;				text-align: center;				vertical-align: middle;				margin-top: 20px;			}			.widgets-container .bottom span {				border: 1px solid black;				padding: 5px 20px;				background: white;				color: black;				font-weight: 800;				border-radius: 2px;				line-height: 50px;			}			.widgets-container .bottom span:first-child {				background: orange;				color: white;				margin-right: 10px;			}	    </style>	    <div class=\"widgets-main\">	        <div class=\"widgets-container\">	            <div class=\"header\">	            	<span>收藏</span>	            	<i></i>	            </div>	            <div class=\"middle\">	            	<img src=\"\" alt=\"\">	            	<p>收藏成功</p>	            </div>	            <div class=\"tag\">	            	<div class=\"info\">	            		<i></i>	            		<span>添加标签来管理你的收藏</span>	            	</div>	            	<div class=\"tag-list\">	            		<ul>	            			<li>我的标签：</li>	            			<li>html5</li>	            			<li>错误</li>	            			<li>IT</li>	            			<li>搞笑</li>	            			<li>购物</li>	            			<li>测试</li>	            		</ul>	            		<div style=\"clear:both;\"></div>	            	</div>	            	<div class=\"new\">	            		<input type=\"text\" placeholder=\"输入文字，按空格或回车以生成标签\">  	            	</div>	            </div>	            <div class=\"bottom\">	            	<span>添加</span>	            	<span>取消</span>	            </div>	        </div>	    </div>');
+		function cancel() {
+			dismiss();
 		}
 
-		function createTag(list) {
+		function addClick(event) {
+			var data = [];
+			$('#FY_WIDGETS .new').find('label').each(function() {
+				data.push($(this).text());
+			});
+
+    		$.ajax({  
+		        type:'post',  
+		        traditional :true,  
+		        url:'http://127.0.0.1:5000/api/tag/add',  
+		        data:{name: data},  
+		        success:function(data){  
+				    if (data['status']['code'] == 000) {
+				    	// 添加标签成功，移除界面
+				    	dismiss();
+					}else {
+						alert('添加标签失败');
+					}
+		        }  
+		    });
+		}
+
+		function dismiss() {
+			$('#FY_WIDGETS').animate({
+	    		opacity: 0
+	    	}, 500, function() {
+	    		$(this).remove();
+	    	});
+		}
+
+		function createTag(tag) {
 			// 生成
 			$('#FY_WIDGETS .new').find('input').remove();
 			$('#FY_WIDGETS .new .clear').remove();
-			$('#FY_WIDGETS .new').append('<label class=\'tag\'>' + list + '</label>');
 
-
+			var label = $("<label class=\'tag\' tag=\'" + tag + "\'></label>").text(tag).on('click', function(){
+				labelDis($(this));
+			});
+			$('#FY_WIDGETS .new').append(label);
 
 			// 重新布局位置
 			$('#FY_WIDGETS .new').append('<input type=\"text\">');
@@ -285,81 +331,76 @@
 			$('#FY_WIDGETS .new').find('input').on('keypress', listenHandle);
 		}
 
+		function labelDis(label) {
+			$('#FY_WIDGETS .tag-list').find('li[tag=' + $(label).text() + ']').css('background', 'transparent').attr('isSel', 'false');
+			$(label).remove();
+			promptIsShow(true);
+		}
+
 		function listenHandle(event) {
 			if (event.keyCode == '13' || event.keyCode == '32') {
 				// 生成标签
-				createTag(name);
-				name = '';
+				createTag($(this).val());
 				$('#FY_WIDGETS .new').find('input').val("");
-			}else {
-				name = name + event.key;
 			}
 		}
 
-		function addTag() {
-			// addUI();
-			
+		function tagClick(event) {
+			// 先判断是否已经添加
+			if ($(this).attr('isSel') == 'true') {
+				labelDis($('#FY_WIDGETS .new').find('label[tag=' + $(this).text() + ']'));
+				return;
+			}
 
-
-	    	$('#FY_WIDGETS .bottom').find('span:first-child').css('background', 'red').on('click', function(){
-				var data = [];
-				$('#FY_WIDGETS .new').find('label').each(function() {
-					data.push($(this).text());
-				});
-
-	    		$.ajax({  
-			        type:'post',  
-			        traditional :true,  
-			        url:'http://127.0.0.1:5000/api/tag/add',  
-			        data:{name: data},  
-			        success:function(data){  
-					    if (data['status']['code'] == 000) {
-					    	// 添加标签成功，移除界面
-					    	$('#FY_WIDGETS').animate({
-					    		opacity: 0
-					    	}, 500, function() {
-					    		$(this).remove();
-					    	});
-						}else {
-							alert('添加标签失败');
-						}
-			        }  
-			    });
-			});
+			$(this).css('background', 'gray');
+			promptIsShow(false);
+			createTag($(this).text());
+			$(this).attr('isSel', 'true');
 		}
+
+		function promptIsShow(isShow) {
+			if (isShow) {
+				if (!$('#FY_WIDGETS .new').find('label').size()) {
+					$('#FY_WIDGETS .new').find('span').show();
+				}
+			}else {
+				$('#FY_WIDGETS .new').find('span').hide();
+			}
+		}
+
 		function listenInput() {
-			var name = "";
 			$('#FY_WIDGETS .new').find('input').on('keypress', listenHandle);
+			$('#FY_WIDGETS .new').find('input').focus(promptIsShow(false));
+			$('#FY_WIDGETS .new').find('input').blur(promptIsShow(true));
+
+			$('#FY_WIDGETS .tag-list').find('li').on('click', tagClick);
+		}
+
+		function addImage(imgUrl) {
+			$.ajax({  
+		        type:'post',  
+		        traditional :true,  
+		        url:'http://127.0.0.1:5000/api/images/add',  
+		        data:{imgUrl: imgUrl, pageUrl:"http://oi7yis5b9.bkt.clouddn.com/Flt4vJTpXudXKn2WIYtLn7UHHz8c", linkUrl:"http://oi7yis5b9.bkt.clouddn.com/Flt4vJTpXudXKn2WIYtLn7UHHz8c"},  
+		        success:function(data){  
+				    if (data['status']['code'] == 000) {
+				    	// 添加图片成功，显示添加标签界面
+
+					}else {
+						alert('添加图片失败');
+					}
+		        }  
+		    });
 		}
 
 		(function() {
-			listenInput();
-			addTag();
-
 			return;
-			addTag();
-			return ;
 
-			// 先上传图片,图片上传成功后添加标签
-				var xhr = new XMLHttpRequest();
-				xhr.open("POST", "http://127.0.0.1:5000/api/images/add", true);
-				xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-				xhr.onreadystatechange = function() {
-				 	if (xhr.readyState == 4) {
-					  	var res = JSON.parse(xhr.responseText);
-					    if (res['status']['code'] == 000) {
-					    	// 服务器处理成功
-					    	// 显示界面，添加标签
-					    	addTag();
-					    }else {
-					    	// 服务器处理失败
-					    	alert('请求处理失败');
-					    }
-				  	}
-				}
-				xhr.send("imgUrl=" + "http://oi7yis5b9.bkt.clouddn.com/Flt4vJTpXudXKn2WIYtLn7UHHz8c" + "&pageUrl=" + "http://oi7yis5b9.bkt.clouddn.com/Flt4vJTpXudXKn2WIYtLn7UHHz8c" + "&linkUrl=" + "http://oi7yis5b9.bkt.clouddn.com/Flt4vJTpXudXKn2WIYtLn7UHHz8c");			
+			$('body').append('				<div id= \"FY_WIDGETS \">	     			<style>	 				#FY_WIDGETS { 					z-index: 99999; 					background: rgba(229,229,229,.95);	             					width: 100%;	             					height: 100%;	             					position: fixed;	             					top: 0;	             					left: 0; 				}         				.widgets-main {	             	         				}	         				.widgets-main .widgets-container {	             					background: white;	             					width: 500px;	             					margin: 0px auto 0;	             					overflow: scroll;	         				}	         				.widgets-container .header {	        	 					height: 40px;	        	 					border-top: 1px solid orange;	        	 					border-bottom: 1px solid gray;				 					padding: 0 20px;				 					line-height: 40px;				 					position: relative;	         				}	         				.widgets-container .header span {	        	 					color: black;	        	 					font-size: 18px;	         				}	         				.widgets-container .header i {	        	 					display: inline-block;	        	 					width: 15px;	        	 					height: 15px;	        	 					position: absolute;				 					background: red;				 					right: 20px;				 					top: 12.5px;	         				}	         				.widgets-container .middle {				 					margin: 20px 20px 10px;				 					border-bottom: 1px solid gray;				 					text-align: center;	         				}	         				.widgets-container .middle img {	        	 					width: 150px;	        	 					margin: 0 auto;	         				}	         				.widgets-container .tag .info {				 					padding: 0 20px;	         				}	         				.widgets-container .tag .info i {	        	 					display: inline-block;	        	 					width: 10px;	        	 					height: 10px;	        	 					background: orange;	         				}	         				ul, li {	        	 					margin: 0;	        	 					padding: 0;	         				}			 				.widgets-container .tag-list ul, .widgets-container .tag-list li {				 					list-style: none;				 					margin: 0;				 					padding: 0;			 				}	         				.widgets-container .tag-list ul li {				 					float: left;				 					border: 1px solid gray;				 					margin-right: 10px;				 					padding: 2px 10px;	         				}	         				.widgets-container .tag-list ul li:first-child {	        	 					border: none;	        	 					padding: 2px 0;	        	 					margin-right: 0;	         				}	         				.widgets-container .tag-list {	        	 					padding: 20px 20px 0;	         				}			 				.widgets-container .new {				 					margin-top: 20px;				 					width: 400px;	 					box-shadow: 0 0 4px gray; 					position: relative; 					left: 20px;		 				}	 				.widgets-container .new .tag { 					background: #ededed; 					padding: 0px 10px; 					height: 25px; 					float: left; 					margin-right: 10px; 					margin-top: 5px; 					line-height: 25px; 				}	 				.widgets-container .new span { 					position: absolute; 					top: 0; 					left: 10px; 					line-height: 35px; 				}	 				.widgets-container .new input {	 					float: left;			 					border: none; 					width: 100px; 					height: 35px; 					padding-left: 10px;	 					background: transparent;		 				}			 				.widgets-container .new .fix { 					position: relative; 				} 				.widgets-container .new .clear { 					clear: both; 				} 				.widgets-container .bottom {				 					background: #f4f4f4;				 					height: 50px;				 					text-align: center;				 					vertical-align: middle;				 					margin-top: 20px;			 				}			 				.widgets-container .bottom span {				 					border: 1px solid black;				 					padding: 5px 20px;				 					background: white;				 					color: black;				 					font-weight: 800;				 					border-radius: 2px;				 					line-height: 50px;			 				}			 				.widgets-container .bottom span:first-child {				 					background: orange;				 					color: white;				 					margin-right: 10px;			 				}	     			</style>	     			<div class= \"widgets-main \">	         				<div class= \"widgets-container \">	             					<div class= \"header \">	            	 						<span>收藏</span>	            	 						<i></i>	             					</div>	             					<div class= \"middle \">	            	 						          	 						<p>收藏成功</p>	             					</div>	             					<div class= \"tag \">	            	 						<div class= \"info \">	            		 							<i></i>	            		 							<span>添加标签来管理你的收藏</span>	            	 						</div>	            	 						<div class= \"tag-list \">	            		 							<ul>	            			 								<li>我的标签：</li>	            			 								<li >html5</li>	            			 								<li >错误</li>	            			 								<li>IT</li>	            			 								<li>搞笑</li>	            			 								<li >购物</li>	            			 								<li >测试</li>	            		 							</ul>	            		 							            	 						</div>	            	 						<div class= \"new \"> 							<span>输入文字，按空格或回车以生成标签</span>	 							<div class= \"fix \"> 								<input type= \"text \" placeholder= \" \">  								<div class= \"clear \"></div>  							</div>            			                      	 						</div> 					</div>	             					<div class= \"bottom \">	            	 						<span >添加</span>	            	 						<span >取消</span>	             					</div>	         				</div>	    			</div>');
 
-			
+			// listenInput();
+
+
 		})();
 
 	</script>
