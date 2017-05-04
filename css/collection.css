@@ -1,0 +1,120 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+ul, li {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+input {
+	outline: none;
+}
+
+body {
+	background: rgb(235, 235, 235);
+}
+
+.container {
+	width: 600px;
+	height: 500px;
+	margin: 20px auto;
+	display: flex;
+	align-items: stretch;
+}
+.left-slider {
+	width: 180px;
+	padding: 0 20px;
+	background: rgb(242, 242, 242);
+	float: left;
+	line-height: 500px;
+	display: flex;
+	align-items: center;
+}
+.left-slider img {
+}
+.right-slider {
+	background: white;
+	width: 280px;
+	float: right;
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 40px 20px 20px;
+}
+.right-slider .search {
+	border: 1px solid gray;
+	padding: 10px;
+}
+.right-slider .category {
+	height: 500px;
+	margin-top: 10px;
+	flex-grow: 1;
+}
+.right-slider .category li {
+	background: rgb(248, 248, 248);
+	padding: 5px;
+}
+.right-slider .recommand-tag {
+	margin: 10px 0;
+}
+.right-slider .recommand-tag ul li {
+	float: left;
+	margin-right: 10px;
+}
+.right-slider .recommand-tag .tag {
+	color: #9e7e6b;
+}
+
+.tag-container {
+	border: 1px solid gray;
+	padding: 10px;
+	background: rgb(248, 248, 248);
+	align-items: center;
+	position: relative;
+}
+.tag-container .input-container {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.tag-container .input-container label {
+	margin-right: 10px;
+	background: blue;
+}
+.tag-container input {
+	order: 1;
+	border: none;
+	background: orange;
+}
+.tag-container .prompt {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.bottom {
+	border-top: 1px solid black;
+	display: flex;
+	padding: 30px 0 10px;
+	align-items: center;
+	justify-content: flex-end;
+}
+.bottom span {
+	color: white;
+	background: red;
+	padding: 10px 15px;
+	border: 1px solid gray;
+	border-radius: 4px;
+}
+
+
+
+
+
+
+
+
